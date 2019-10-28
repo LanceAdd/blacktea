@@ -1,9 +1,15 @@
+import { Episode } from './models/episode.model';
+import { Course } from './models/course.model';
 import { Module, Global } from '@nestjs/common';
 import { DbService } from './db.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { User } from './models/user.model';
 
-const models = TypegooseModule.forFeature([User]);
+const models = TypegooseModule.forFeature([
+  User,
+  Course,
+  Episode,
+]);
 
 @Global()
 @Module({
